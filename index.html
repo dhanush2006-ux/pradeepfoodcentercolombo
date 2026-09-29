@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradeep Food Center (Akka Kade) | Authentic Colombo Dining</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Sans+Sinhala:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Noto Sans Sinhala', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            goldHover: '#B89628',
+                            dark: '#0F172A',
+                            card: '#1E293B',
+                            red: '#DC2626'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Navigation Header -->
+    <header class="fixed w-full top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-gold to-yellow-200 flex items-center justify-center text-brand-dark font-bold text-xl shadow-lg shadow-brand-gold/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-white block leading-none font-serif" data-key="title">PRADEEP</span>
+                    <span class="text-xs text-brand-gold uppercase tracking-widest font-semibold" data-key="tagline">Food Center • Akka Kade</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide text-slate-300">
+                <a href="#about" class="hover:text-brand-gold transition-colors" data-key="nav_about">About Us</a>
+                <a href="#menu" class="hover:text-brand-gold transition-colors" data-key="nav_menu">Signature Menu</a>
+                <a href="#gallery" class="hover:text-brand-gold transition-colors" data-key="nav_gallery">Gallery</a>
+                <a href="#reviews" class="hover:text-brand-gold transition-colors" data-key="nav_reviews">Reviews</a>
+                <a href="#location" class="hover:text-brand-gold transition-colors" data-key="nav_location">Find Us</a>
+            </nav>
+
+            <!-- Action Controls -->
+            <div class="flex items-center gap-4">
+                <!-- Language Toggle Button -->
+                <button onclick="toggleLanguage()" id="langBtn" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-brand-gold px-3.5 py-1.5 rounded-full text-xs font-semibold flex items-center gap-2 transition-all">
+                    <i class="fa-solid fa-globe text-brand-gold"></i>
+                    <span id="langText">සිංහල</span>
+                </button>
+
+                <!-- Call Button -->
+                <a href="tel:+94777433738" class="hidden sm:inline-flex bg-brand-gold hover:bg-brand-goldHover text-brand-dark font-bold px-5 py-2 rounded-full text-xs tracking-wider uppercase shadow-lg shadow-brand-gold/10 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-phone mr-2 mt-0.5"></i> <span data-key="call_us">Call Now</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background Overlay with Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80" alt="Restaurant Atmosphere" class="w-full h-full object-cover object-center opacity-25">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-xs font-semibold mb-6">
+                    <i class="fa-solid fa-award"></i> <span data-key="hero_badge">Colombo's Local Favorite • Known as Akka Kade</span>
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight font-serif mb-6" data-key="hero_title">
+                    Taste the Passion of Authentic Sri Lankan Flavors
+                </h1>
+                <p class="text-lg text-slate-300 mb-8 leading-relaxed font-light" data-key="hero_desc">
+                    Serving legendary Chicken Kottu, fragrant Fried Rice, mouth-watering Nasi Goreng, and authentic Sri Lankan Rice & Curry in the heart of Grandpass, Colombo.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#order" class="bg-brand-gold hover:bg-brand-goldHover text-brand-dark font-bold px-7 py-3.5 rounded-xl shadow-xl shadow-brand-gold/20 transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> <span data-key="btn_order">Order via WhatsApp</span>
+                    </a>
+                    <a href="#location" class="bg-slate-800/80 hover:bg-slate-700 text-white border border-slate-700 font-semibold px-7 py-3.5 rounded-xl transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-map-pin text-brand-gold"></i> <span data-key="btn_direction">Get Directions</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Stats Strip -->
+    <section class="border-y border-slate-800 bg-slate-900/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="text-3xl font-extrabold text-brand-gold font-serif">4.2 ★</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider" data-key="stat_rating">370+ Google Reviews</div>
+            </div>
+            <div>
+                <div class="text-3xl font-extrabold text-brand-gold font-serif">100%</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider" data-key="stat_fresh">Fresh & Authentic Ingredients</div>
+            </div>
+            <div>
+                <div class="text-3xl font-extrabold text-brand-gold font-serif">11 AM - 12 AM</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider" data-key="stat_hours">Open Daily for Lunch & Dinner</div>
+            </div>
+            <div>
+                <div class="text-3xl font-extrabold text-brand-gold font-serif">Rs. 450+</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider" data-key="stat_budget">Affordable Dining</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold mb-2" data-key="about_sub">Our Story</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white font-serif mb-6" data-key="about_title">The Home of True Colombo Flavors</h3>
+                <p class="text-slate-300 leading-relaxed mb-4" data-key="about_p1">
+                    Widely recognized by regulars as <strong>Akka Kade</strong>, Pradeep Food Center has earned its reputation through consistent taste, fresh spices, and fast service. Located at 12 Stace Rd, Colombo 14, we bring food lovers together for unforgettable street food and home-style dishes.
+                </p>
+                <p class="text-slate-400 leading-relaxed mb-8" data-key="about_p2">
+                    Whether you are craving late-night Kottu, a hearty plate of Rice & Curry, or savory Chinese-style fried rice, our menu is designed to satisfy every appetite.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-xs font-medium text-slate-300 flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-brand-gold"></i> Takeaway
+                    </span>
+                    <span class="px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-xs font-medium text-slate-300 flex items-center gap-2">
+                        <i class="fa-solid fa-chair text-brand-gold"></i> Dine-In
+                    </span>
+                    <span class="px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-xs font-medium text-slate-300 flex items-center gap-2">
+                        <i class="fa-solid fa-motorcycle text-brand-gold"></i> Delivery
+                    </span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-4">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Kottu Roti" class="rounded-2xl border border-slate-800 shadow-2xl h-56 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Rice and Curry" class="rounded-2xl border border-slate-800 shadow-2xl h-40 w-full object-cover">
+                </div>
+                <div class="space-y-4 pt-8">
+                    <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=80" alt="Fried Rice" class="rounded-2xl border border-slate-800 shadow-2xl h-40 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Nasi Goreng" class="rounded-2xl border border-slate-800 shadow-2xl h-56 w-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Menu Section -->
+    <section id="menu" class="py-24 bg-slate-900/60 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold mb-2" data-key="menu_sub">Explore Our Menu</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white font-serif" data-key="menu_title">Our Signature Dishes</h3>
+            </div>
+
+            <!-- Food Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Menu Card 1 -->
+                <div class="bg-brand-card rounded-2xl border border-slate-800 overflow-hidden group hover:border-brand-gold/50 transition-all duration-300">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Chicken Kottu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-brand-gold text-brand-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Chef Special</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-white mb-2" data-key="dish1_title">Special Chicken Kottu</h4>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed" data-key="dish1_desc">Finely shredded Godamba roti tossed with aromatic spices, fresh vegetables, tender chicken pieces, and rich Sri Lankan gravy.</p>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xl font-bold text-brand-gold">Rs. 850</span>
+                            <a href="#order" class="text-xs font-bold uppercase tracking-wider text-white hover:text-brand-gold flex items-center gap-1 transition">
+                                <span data-key="btn_order_item">Order Now</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Card 2 -->
+                <div class="bg-brand-card rounded-2xl border border-slate-800 overflow-hidden group hover:border-brand-gold/50 transition-all duration-300">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=80" alt="Mixed Nasi Goreng" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-brand-dark/80 backdrop-blur-md text-brand-gold border border-brand-gold/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Popular</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-white mb-2" data-key="dish2_title">Mixed Nasi Goreng</h4>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed" data-key="dish2_desc">Indonesian-style fried rice prepared with chicken, seafood, topped with a fried bullseye egg and authentic chili paste.</p>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xl font-bold text-brand-gold">Rs. 950</span>
+                            <a href="#order" class="text-xs font-bold uppercase tracking-wider text-white hover:text-brand-gold flex items-center gap-1 transition">
+                                <span data-key="btn_order_item">Order Now</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Card 3 -->
+                <div class="bg-brand-card rounded-2xl border border-slate-800 overflow-hidden group hover:border-brand-gold/50 transition-all duration-300">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Rice and Curry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-brand-dark/80 backdrop-blur-md text-brand-gold border border-brand-gold/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Authentic</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-white mb-2" data-key="dish3_title">Sri Lankan Rice & Curry</h4>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed" data-key="dish3_desc">Steaming rice served with your choice of chicken, fish, or egg, accompanied by 3 daily fresh vegetable curries and papadam.</p>
+                        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                            <span class="text-xl font-bold text-brand-gold">Rs. 450</span>
+                            <a href="#order" class="text-xs font-bold uppercase tracking-wider text-white hover:text-brand-gold flex items-center gap-1 transition">
+                                <span data-key="btn_order_item">Order Now</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold mb-2" data-key="rev_sub">Real Customer Feedback</h2>
+            <h3 class="text-3xl sm:text-4xl font-bold text-white font-serif" data-key="rev_title">What Google Reviewers Say</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-brand-card p-8 rounded-2xl border border-slate-800 relative">
+                <i class="fa-solid fa-quote-right absolute top-6 right-6 text-3xl text-slate-800"></i>
+                <div class="flex text-amber-400 text-xs gap-1 mb-4">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-slate-300 text-sm italic mb-6 leading-relaxed" data-key="rev1_text">"The Kottu here is unbeatable in terms of flavor and quantity. Fast service and authentic taste!"</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-brand-gold text-sm">R</div>
+                    <div>
+                        <div class="text-sm font-bold text-white">Ramesh K.</div>
+                        <div class="text-xs text-slate-500" data-key="rev1_tag">Local Guide • 12 Reviews</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-brand-card p-8 rounded-2xl border border-slate-800 relative">
+                <i class="fa-solid fa-quote-right absolute top-6 right-6 text-3xl text-slate-800"></i>
+                <div class="flex text-amber-400 text-xs gap-1 mb-4">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-slate-300 text-sm italic mb-6 leading-relaxed" data-key="rev2_text">"Known as Akka Kade by everyone nearby. Very pocket-friendly prices for high-quality food. Highly recommended!"</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-brand-gold text-sm">S</div>
+                    <div>
+                        <div class="text-sm font-bold text-white">Saman Perera</div>
+                        <div class="text-xs text-slate-500" data-key="rev2_tag">Verified Customer</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-brand-card p-8 rounded-2xl border border-slate-800 relative">
+                <i class="fa-solid fa-quote-right absolute top-6 right-6 text-3xl text-slate-800"></i>
+                <div class="flex text-amber-400 text-xs gap-1 mb-4">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="text-slate-300 text-sm italic mb-6 leading-relaxed" data-key="rev3_text">"Great place for dinner with friends. The Nasi Goreng and Fried Rice portions are huge and taste amazing."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-brand-gold text-sm">M</div>
+                    <div>
+                        <div class="text-sm font-bold text-white">Mohamed A.</div>
+                        <div class="text-xs text-slate-500" data-key="rev3_tag">Food Enthusiast</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Google Map Section -->
+    <section id="location" class="py-24 bg-slate-900/60 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+                <div>
+                    <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold mb-2" data-key="loc_sub">Visit Us</h2>
+                    <h3 class="text-3xl font-bold text-white font-serif mb-6" data-key="loc_title">Find Pradeep Food Center</h3>
+                    
+                    <div class="space-y-6 text-slate-300">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-gold shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white" data-key="loc_add_title">Address</h4>
+                                <p class="text-xs text-slate-400 mt-1">12 Stace Rd, Colombo 14, Sri Lanka</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-gold shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white" data-key="loc_phone_title">Phone / WhatsApp</h4>
+                                <p class="text-xs text-slate-400 mt-1">+94 77 743 3738</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-gold shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white" data-key="loc_time_title">Opening Hours</h4>
+                                <p class="text-xs text-slate-400 mt-1">Everyday: 11:00 AM – 12:00 AM (Midnight)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://www.google.com/maps/search/?api=1&query=Pradeep%20Food%20Center&query_place_id=ChIJA2fSKv9Y4joRX00Ar5-sJyE" 
+                       target="_blank" 
+                       class="inline-flex items-center gap-2 mt-8 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-brand-gold font-semibold px-6 py-3 rounded-xl text-xs transition">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-key="btn_gmaps">Open in Google Maps</span>
+                    </a>
+                </div>
+
+                <!-- Google Maps iFrame Container -->
+                <div class="lg:col-span-2 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl h-96 relative">
+                    <iframe 
+                        class="w-full h-full border-0 grayscale opacity-85 hover:grayscale-0 transition-all duration-500" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.627671813411!2d79.86961447587425!3d6.946357993053748!2m3!1f0!0!0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae258ff22d26703%3A0x2827acbfbf004d5f!2sPradeep%20Food%20Center!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick WhatsApp Order Form Section -->
+    <section id="order" class="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-tr from-slate-900 to-brand-card p-8 sm:p-12 rounded-3xl border border-slate-800 shadow-2xl relative overflow-hidden">
+            <div class="text-center max-w-xl mx-auto mb-8">
+                <i class="fa-brands fa-whatsapp text-5xl text-emerald-500 mb-4 inline-block"></i>
+                <h3 class="text-2xl sm:text-3xl font-bold text-white font-serif" data-key="ord_title">Fast WhatsApp Order Placement</h3>
+                <p class="text-slate-400 text-sm mt-2" data-key="ord_desc">Type your name and desired dishes below to generate a direct message to our kitchen.</p>
+            </div>
+
+            <form onsubmit="sendOrder(event)" class="space-y-4 max-w-lg mx-auto">
+                <div>
+                    <input type="text" id="custName" required placeholder="Your Name" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3.5 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-brand-gold transition">
+                </div>
+                <div>
+                    <textarea id="custOrder" required rows="3" placeholder="Enter items & quantities (e.g. 2 Special Chicken Kottu, 1 Nasi Goreng)" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3.5 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-brand-gold transition"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> <span data-key="btn_send_whatsapp">Send Order to Restaurant</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-12 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 Pradeep Food Center (Akka Kade). All Rights Reserved.</p>
+            <p class="mt-2">12 Stace Rd, Colombo 14, Sri Lanka | Contact: +94 77 743 3738</p>
+        </div>
+    </footer>
+
+    <!-- Translation JavaScript -->
+    <script>
+        const i18n = {
+            en: {
+                title: "PRADEEP",
+                tagline: "Food Center • Akka Kade",
+                nav_about: "About Us",
+                nav_menu: "Signature Menu",
+                nav_gallery: "Gallery",
+                nav_reviews: "Reviews",
+                nav_location: "Find Us",
+                call_us: "Call Now",
+                hero_badge: "Colombo's Local Favorite • Known as Akka Kade",
+                hero_title: "Taste the Passion of Authentic Sri Lankan Flavors",
+                hero_desc: "Serving legendary Chicken Kottu, fragrant Fried Rice, mouth-watering Nasi Goreng, and authentic Sri Lankan Rice & Curry in the heart of Grandpass, Colombo.",
+                btn_order: "Order via WhatsApp",
+                btn_direction: "Get Directions",
+                stat_rating: "370+ Google Reviews",
+                stat_fresh: "Fresh & Authentic Ingredients",
+                stat_hours: "Open Daily for Lunch & Dinner",
+                stat_budget: "Affordable Dining",
+                about_sub: "Our Story",
+                about_title: "The Home of True Colombo Flavors",
+                about_p1: "Widely recognized by regulars as Akka Kade, Pradeep Food Center has earned its reputation through consistent taste, fresh spices, and fast service. Located at 12 Stace Rd, Colombo 14, we bring food lovers together for unforgettable street food and home-style dishes.",
+                about_p2: "Whether you are craving late-night Kottu, a hearty plate of Rice & Curry, or savory Chinese-style fried rice, our menu is designed to satisfy every appetite.",
+                menu_sub: "Explore Our Menu",
+                menu_title: "Our Signature Dishes",
+                dish1_title: "Special Chicken Kottu",
+                dish1_desc: "Finely shredded Godamba roti tossed with aromatic spices, fresh vegetables, tender chicken pieces, and rich Sri Lankan gravy.",
+                dish2_title: "Mixed Nasi Goreng",
+                dish2_desc: "Indonesian-style fried rice prepared with chicken, seafood, topped with a fried bullseye egg and authentic chili paste.",
+                dish3_title: "Sri Lankan Rice & Curry",
+                dish3_desc: "Steaming rice served with your choice of chicken, fish, or egg, accompanied by 3 daily fresh vegetable curries and papadam.",
+                btn_order_item: "Order Now",
+                rev_sub: "Real Customer Feedback",
+                rev_title: "What Google Reviewers Say",
+                rev1_text: "\"The Kottu here is unbeatable in terms of flavor and quantity. Fast service and authentic taste!\"",
+                rev1_tag: "Local Guide • 12 Reviews",
+                rev2_text: "\"Known as Akka Kade by everyone nearby. Very pocket-friendly prices for high-quality food. Highly recommended!\"",
+                rev2_tag: "Verified Customer",
+                rev3_text: "\"Great place for dinner with friends. The Nasi Goreng and Fried Rice portions are huge and taste amazing.\"",
+                rev3_tag: "Food Enthusiast",
+                loc_sub: "Visit Us",
+                loc_title: "Find Pradeep Food Center",
+                loc_add_title: "Address",
+                loc_phone_title: "Phone / WhatsApp",
+                loc_time_title: "Opening Hours",
+                btn_gmaps: "Open in Google Maps",
+                ord_title: "Fast WhatsApp Order Placement",
+                ord_desc: "Type your name and desired dishes below to generate a direct message to our kitchen.",
+                btn_send_whatsapp: "Send Order to Restaurant",
+                ph_name: "Your Name",
+                ph_order: "Enter items & quantities (e.g. 2 Special Chicken Kottu, 1 Nasi Goreng)"
+            },
+            si: {
+                title: "ප්‍රදීප්",
+                tagline: "ෆුඩ් සෙන්ටර් • අක්කා කඩේ",
+                nav_about: "අප ගැන",
+                nav_menu: "කෑම ලැයිස්තුව",
+                nav_gallery: "ඡායාරූප",
+                nav_reviews: "අදහස්",
+                nav_location: "ස්ථානය",
+                call_us: "ඇමතුමක් දෙන්න",
+                hero_badge: "කොළඹ ජනප්‍රියම ස්ථානයක් • අක්කා කඩේ ලෙස ප්‍රසිද්ධයි",
+                hero_title: "දේශීය රසයෙන් පිරුණු රෝසවත් ශ්‍රී ලාංකීය ආහාර",
+                hero_desc: "කොළඹ ග්‍රෑන්ඩ්පාස් හි හොඳම චිකන් කොත්තු, ෆ්‍රයිඩ් රයිස්, රසවත් නාසිගුරේන් සහ සාම්ප්‍රදායික බත් සහ කරි.",
+                btn_order: "WhatsApp හරහා ඇණවුම් කරන්න",
+                btn_direction: "පාර සොයාගන්න",
+                stat_rating: "Google හි 370+ අගය කිරීම්",
+                stat_fresh: "100% නැවුම් සහ දේශීය කළමනාකරණය",
+                stat_hours: "දිනපතා විවෘතයි",
+                stat_budget: "සාධාරණ මිල ගණන්",
+                about_sub: "අපගේ කතාව",
+                about_title: "කොළඹ නියම රසයේ නවාතැන",
+                about_p1: "අක්කා කඩේ ලෙස කා අතරත් ප්‍රසිද්ධ ප්‍රදීප් ෆුඩ් සෙන්ටර්, අසමසම රසය සහ ඉක්මන් සේවාව නිසා කොළඹ ප්‍රසිද්ධ වී ඇත.",
+                about_p2: "රසවත් කොත්තු, ගෙදර හැදූ රසට බත් සහ කරි හෝ චයිනීස් ෆ්‍රයිඩ් රයිස් ඇතුළු රසවත් කෑම වර්ග අප වෙතින් ලබාගත හැක.",
+                menu_sub: "කෑම ලැයිස්තුව",
+                menu_title: "අපගේ විශේෂිත ආහාර",
+                dish1_title: "ස්පෙෂල් චිකන් කොත්තු",
+                dish1_desc: "මෘදු කුකුළු මස්, එළවළු, රසවත් මිරිස් සහ හොදි සමඟ සකස් කළ කොත්තු.",
+                dish2_title: "මික්ස්ඩ් නාසිගුරේන්",
+                dish2_desc: "කුකුළු මස්, බිත්තර සහ මිරිස් පේස්ට් සමඟ ඉන්දුනීසියානු ක්‍රමයට සකස් කළ ෆ්‍රයිඩ් රයිස්.",
+                dish3_title: "ශ්‍රී ලාංකීය බත් සහ කරි",
+                dish3_desc: "චිකන්, මාළු හෝ බිත්තර සමඟ එළවළු වංජන 3ක් සහිත සාම්ප්‍රදායික බත් පත.",
+                btn_order_item: "ඇණවුම් කරන්න",
+                rev_sub: "පාරිභෝගික අදහස්",
+                rev_title: "Google පරිශීලකයින් කියන දේ",
+                rev1_text: "\"මෙතන කොත්තු වල රසය සහ ප්‍රමාණය ඉතා ඉහළයි. ඉක්මන් සේවාව!\"",
+                rev1_tag: "ප්‍රදේශයේ මාර්ගෝපදේශකයෙක්",
+                rev2_text: "\"හැමෝම දන්න අක්කා කඩේ. ඉතා අඩු මුදලකට රසවත් කෑම ලබාගත හැක.\"",
+                rev2_tag: "සත්‍යාපිත පාරිභෝගිකයෙක්",
+                rev3_text: "\"යහළුවන් සමඟ රාත්‍රී ආහාරයට හොඳම ස්ථානයක්. නාසිගුරේන් ඉතා රසවත්.\"",
+                rev3_tag: "ආහාර රසවිඳින්නෙක්",
+                loc_sub: "අප වෙත පැමිණෙන්න",
+                loc_title: "ප්‍රදීප් ෆුඩ් සෙන්ටර් සොයාගන්න",
+                loc_add_title: "ලිපිනය",
+                loc_phone_title: "දුරකථන / WhatsApp",
+                loc_time_title: "විවෘත වේලාවන්",
+                btn_gmaps: "Google Maps හි බලන්න",
+                ord_title: "WhatsApp මගින් ඉක්මනින් ඇණවුම් කරන්න",
+                ord_desc: "ඔබේ නම සහ අවශ්‍ය කෑම වර්ග ඇතුළත් කර කෙළින්ම WhatsApp පණිවිඩයක් යවන්න.",
+                btn_send_whatsapp: "ඇණවුම යවන්න",
+                ph_name: "ඔබේ නම",
+                ph_order: "අවශ්‍ය කෑම සහ ප්‍රමාණය (උදා: චිකන් කොත්තු 2, නාසිගුරේන් 1)"
+            }
+        };
+
+        let activeLang = 'en';
+
+        function toggleLanguage() {
+            activeLang = activeLang === 'en' ? 'si' : 'en';
+            document.getElementById('langText').innerText = activeLang === 'en' ? 'සිංහල' : 'English';
+
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (i18n[activeLang][key]) {
+                    el.innerText = i18n[activeLang][key];
+                }
+            });
+
+            document.getElementById('custName').placeholder = i18n[activeLang].ph_name;
+            document.getElementById('custOrder').placeholder = i18n[activeLang].ph_order;
+        }
+
+        function sendOrder(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const order = document.getElementById('custOrder').value;
+            const phone = "94777433738";
+
+            const text = activeLang === 'en'
+                ? `Hello Pradeep Food Center, my name is ${name}. I would like to order: ${order}`
+                : `හෙලෝ ප්‍රදීප් ෆුඩ් සෙන්ටර්, මගේ නම ${name}. මට මේවා ඇණවුම් කිරීමට අවශ්‍යයි: ${order}`;
+
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
